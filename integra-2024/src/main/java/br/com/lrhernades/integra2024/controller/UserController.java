@@ -9,37 +9,29 @@ import java.util.List;
 @RestController
 @RequestMapping("/user")
 public record UserController(UserService userService) {
-    
-    @GetMapping
-    public String inicial() {
-        System.out.println("teste");
-        return "teste";
+
+    @PostMapping
+    public User salvar(@RequestBody User user){
+        return userService.salvar(user);
     }
     
-    /*
-    @PostMapping("/user")
-    public User salvar(@RequestBody User user){
-        System.out.println("socorro");
-        return userService.salvar(user);
-    }*/
-    
-    /* @GetMapping("/users")
+    @GetMapping
     public List listarTodos() {
         return userService.listarTodos();
     }
     
-    @GetMapping("/user/{id}")
+    @GetMapping("/{id}")
     public User listarPorId(@PathVariable Long id) {
         return userService.listarPorId(id);
     }
     
-    @PutMapping("/user/{id}")
+    @PutMapping("/{id}")
     public User editar(@PathVariable Long id, @RequestBody User user) {
         return userService.editar(id, user);
     }
     
-    @DeleteMapping("/user/{id}")
+    @DeleteMapping("/{id}")
     public void deletar(@PathVariable Long id) {
         userService.deletar(id);
-    }*/
+    }
 }
