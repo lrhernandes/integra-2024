@@ -4,8 +4,10 @@ import { FiPlus } from "react-icons/fi";
 import { Wrapper } from "./Wrapper";
 import UsersTable from "./UsersTable";
 import Button from "./Button";
+import { useRouter } from "next/navigation";
 
 const UsersTableWrapper: React.FC = () => {
+  const router = useRouter();
   return (
     <>
       <div className="flex mb-8 mt-4 flex-row justify-between items-center w-full">
@@ -13,7 +15,9 @@ const UsersTableWrapper: React.FC = () => {
         <Button
           text="ADD USER"
           type="primary"
-          action={() => {}}
+          action={() => {
+            router.push("/users/new");
+          }}
           icon={FiPlus}
         />
       </div>

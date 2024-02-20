@@ -1,4 +1,4 @@
-import UserRegisterForm from "@/app/components/UserRegisterForm";
+import UserEditForm from "@/app/components/UserEditForm";
 import { Wrapper } from "@/app/components/Wrapper";
 import React from "react";
 
@@ -7,10 +7,10 @@ const Page: React.FC = () => {
     <div>
       <section className="m-8">
         <div className="flex mb-8 mt-4 flex-row justify-between items-center w-full">
-          <h2 className="text-2xl font-semibold">Cadastrar novo usuário</h2>
+          <h2 className="text-2xl font-semibold">Editar usuário</h2>
         </div>
         <Wrapper>
-          <UserRegisterForm />
+          <UserEditForm />
         </Wrapper>
       </section>
     </div>

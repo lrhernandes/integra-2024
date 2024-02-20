@@ -4,6 +4,7 @@ import { FiEdit } from "react-icons/fi";
 import { FiTrash } from "react-icons/fi";
 import { FiX } from "react-icons/fi";
 import Modal from "./Modal";
+import { useRouter } from "next/navigation";
 
 const users = [
   {
@@ -58,6 +59,8 @@ const UsersTable: React.FC = () => {
     setIsModalOpen(false);
   };
 
+  const router = useRouter();
+
   return (
     <div>
       <table className="min-w-full divide-y divide-gray-100">
@@ -84,7 +87,12 @@ const UsersTable: React.FC = () => {
                 >
                   <FiEye size={22} />
                 </button>
-                <button className="p-2 h-full">
+                <button
+                  className="p-2 h-full"
+                  onClick={() => {
+                    router.push(`/users/${user.id}`);
+                  }}
+                >
                   <FiEdit size={22} />
                 </button>
                 <button className="p-2 h-full">
