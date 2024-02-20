@@ -7,13 +7,15 @@ import br.com.lrhernades.integra2024.services.UserService;
 import java.util.List;
 
 @RestController
+@RequestMapping("/user")
 public record UserController(UserService userService) {
     
-    @RequestMapping("/user")
-    @ResponseBody
+    @GetMapping
     public String inicial() {
+        System.out.println("teste");
         return "teste";
     }
+    
     /*
     @PostMapping("/user")
     public User salvar(@RequestBody User user){
